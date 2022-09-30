@@ -6,8 +6,8 @@ function Login() {
     <div className='auth'>
       <h1>Login</h1>
       <form>
-        <input type='text' placeholder='username'></input>
-        <input type='password' placeholder='password'></input>
+        <input required type='text' placeholder='username'></input>
+        <input required type='password' placeholder='password'></input>
         <button>Login</button>
         <p>This is an error!</p>
         <span>Don't you have account? <Link to='/register'>Register</Link></span>
