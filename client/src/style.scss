@@ -9,7 +9,17 @@ $ligth-green: #b9e7e7;
 
 .App {
 
+    display: flex;
+    justify-content: center;
+
     .container {
+
+        width: 1024px;
+
+        .link{
+            text-decoration: none;
+            color: inherit;
+        }
 
         .auth {
             display: flex;
@@ -55,6 +65,56 @@ $ligth-green: #b9e7e7;
                 span{
                     font-size: 12px;
                     text-align: center;
+                }
+            }
+        }
+
+        //navbar
+        .navbar{
+
+            .container{
+
+                padding: 10px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .logo{
+                    img{
+                        width: 120px;
+                    }
+                }
+
+                .links{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    h6{
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+
+                    span{
+                        cursor: pointer;
+                    }
+
+                    .write{
+                        background-color: $ligth-green;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 300;
+                        border: 1px solid #fff;
+
+                        &:hover{
+                            color: teal;
+                            background-color: #fff;
+                            border: 1px solid teal;
+                        }
+                    }
                 }
             }
         }
