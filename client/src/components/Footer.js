@@ -1,8 +1,14 @@
 import React from 'react'
+import Logo from '../img/logo.png'
+
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <footer>
+
+      <img src={Logo} />
+      <span>Made by <a href='https://www.github.com/cembicakci' target='_blank'>Cem Bıçakcı</a></span>
+    </footer>
   )
 }
 

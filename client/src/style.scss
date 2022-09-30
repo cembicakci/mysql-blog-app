@@ -21,6 +21,7 @@ $ligth-green: #b9e7e7;
             color: inherit;
         }
 
+        //login
         .auth {
             display: flex;
             flex-direction: column;
@@ -116,6 +117,27 @@ $ligth-green: #b9e7e7;
                         }
                     }
                 }
+            }
+        }
+
+        //footer
+        footer{
+
+            margin-top: 100px;
+            padding: 20px;
+            background-color: $ligth-green;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+
+            img{
+                height: 50px;
+            }
+
+            a{
+                color: blue;
+                font-style: italic;
             }
         }
     }
