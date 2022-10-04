@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         element: <Single />
       },
       {
-        path: "write",
+        path: "/write",
         element: <Write />
       }
     ]
