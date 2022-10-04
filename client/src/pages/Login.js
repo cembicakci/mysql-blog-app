@@ -7,7 +7,6 @@ function Login() {
 
   const [inputs, setInputs] = useState({
     username: '',
-    email: '',
     password: ''
   })
 
@@ -20,10 +19,12 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(inputs)
     try {
       const res = await axios.post('/auth/login', inputs)
       navigate('/')
     } catch (err) {
+      console.log(err)
       setErr(err.response.data)
     }
   }
