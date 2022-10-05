@@ -11,7 +11,7 @@ function Navbar() {
     <nav className='navbar'>
       <div className='container'>
         <div className='logo'>
-          <img src={Logo}></img>
+         <Link to='/'> <img src={Logo}></img></Link>
         </div>
         <div className='links'>
           <Link className='link' to='/?cat=art'>
@@ -35,7 +35,7 @@ function Navbar() {
 
           <span>{currentUser?.username}</span>
           {currentUser ? <span onClick={logout}>Logout</span> : <Link className='link' to='/login'>Login</Link>}
-          
+
           <span className='write'>
             <Link className='link' to='write'>Write</Link>
           </span>
