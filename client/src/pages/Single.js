@@ -22,6 +22,7 @@ function Single() {
       try {
         const res = await axios.get(`/posts/${postId}`)
         setPost(res.data)
+        console.log(res.data)
       } catch (err) {
         console.log(err)
       }
@@ -36,14 +37,14 @@ function Single() {
         <img src={post?.img}></img>
 
         <div className='user'>
-          <img src='https://images.pexels.com/photos/12800709/pexels-photo-12800709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></img>
+          {post.userImg && <img src={post.userImg}></img>}
 
           <div className='info'>
             <span>{post?.username}</span>
             <p>Posted {moment(post.date).fromNow()}</p>
           </div>
 
-          {currentUser === post.username && (
+          {currentUser?.username === post.username && (
             <div className='edit'>
               <Link to={`/write?edit=1`}>
                 <img src={Edit} alt='edit'></img>
@@ -56,7 +57,7 @@ function Single() {
         {post.desc}
       </div>
       <Menu />
-    </div>
+    </div >
   )
 }
 
