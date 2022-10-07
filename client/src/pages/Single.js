@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Edit from '../img/edit.png'
 import Delete from '../img/delete.png'
 import Menu from '../components/Menu'
@@ -14,6 +14,7 @@ function Single() {
   const { currentUser } = useContext(AuthContext);
 
   const location = useLocation();
+  const navigate = useNavigate()
 
   const postId = location.pathname.split('/')[2];
 
@@ -22,7 +23,6 @@ function Single() {
       try {
         const res = await axios.get(`/posts/${postId}`)
         setPost(res.data)
-        console.log(res.data)
       } catch (err) {
         console.log(err)
       }
@@ -30,6 +30,15 @@ function Single() {
 
     fetchData()
   }, [postId])
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`/posts/${postId}`)
+      navigate('/')
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   return (
     <div className='single'>
@@ -49,7 +58,7 @@ function Single() {
               <Link to={`/write?edit=1`}>
                 <img src={Edit} alt='edit'></img>
               </Link>
-              <img src={Delete} alt='delete'></img>
+              <img src={Delete} alt='delete' onClick={handleDelete}></img>
             </div>
           )}
         </div>

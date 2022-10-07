@@ -39,8 +39,8 @@ function Home() {
   return (
     <div className='home'>
       <div className='posts'>
-        {posts.map(post => (
-          <div className='post' key={post.id}>
+        {posts.map((post, idx) => (
+          <div className='post' key={idx}>
             <div className='img'>
               <img src={post.img} />
             </div>
