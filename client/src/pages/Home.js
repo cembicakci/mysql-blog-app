@@ -5,15 +5,16 @@ import { Link, useLocation } from 'react-router-dom'
 function Home() {
 
   const [posts, setPosts] = useState([]);
+  console.log(posts)
 
   const cat = useLocation().search
 
   useEffect(() => {
     const fetchData = async () => {
-      try{
+      try {
         const res = await axios.get(`/posts/${cat}`)
         setPosts(res.data)
-      }catch(err){
+      } catch (err) {
         console.log(err)
       }
     }
