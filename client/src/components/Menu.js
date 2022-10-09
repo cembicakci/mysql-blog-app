@@ -40,7 +40,7 @@ function Menu({ cat }) {
 
             {posts.map(post => (
                 <div className='post'>
-                    <img src={post.img} />
+                    <img src={`../upload/${post?.img}`} />
                     <h2>{post.title}</h2>
                     <button>Read more</button>
 
