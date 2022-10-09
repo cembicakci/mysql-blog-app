@@ -7,7 +7,7 @@ function Footer() {
     <footer>
 
       <img src={Logo} />
-      <span>Made by <a href='https://www.github.com/cembicakci' target='_blank'>Cem Bıçakcı</a></span>
+      <span><a href='https://www.github.com/cembicakci' target='_blank'>Cem Bıçakcı</a></span>
     </footer>
   )
 }
