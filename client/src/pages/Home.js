@@ -5,7 +5,6 @@ import { Link, useLocation } from 'react-router-dom'
 function Home() {
 
   const [posts, setPosts] = useState([]);
-  console.log(posts)
 
   const cat = useLocation().search
 
@@ -40,7 +39,8 @@ function Home() {
                 <h1>{post.title}</h1>
               </Link>
               <p>{getText(post.desc)}</p>
-              <button>Read More</button>
+              <a className='btn' href={`/post/${post.id}`}>Read More</a>
+
             </div>
           </div>
         ))}

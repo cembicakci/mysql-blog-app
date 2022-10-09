@@ -12,7 +12,6 @@ function Write() {
   const [value, setValue] = useState(state?.desc || '');
   const [title, setTitle] = useState(state?.title || '');
   const [file, setFile] = useState('');
-  console.log(file)
   const [cat, setCat] = useState(state?.cat || '');
 
   const navigate = useNavigate()
