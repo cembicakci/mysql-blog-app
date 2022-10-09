@@ -69,7 +69,7 @@ function Single() {
           )}
         </div>
         <h1>{post.title}</h1>
-        <p>{getText(post.desc)}</p>
+         <p>{getText(post.desc)}</p>
       </div>
 
       <Menu cat={post.cat} />

@@ -7,10 +7,12 @@ import moment from 'moment';
 
 function Write() {
 
-  const state = useLocation().state
-  const [value, setValue] = useState(state?.title || '');
-  const [title, setTitle] = useState(state?.desc || '');
+  const state = useLocation().state;
+
+  const [value, setValue] = useState(state?.desc || '');
+  const [title, setTitle] = useState(state?.title || '');
   const [file, setFile] = useState('');
+  console.log(file)
   const [cat, setCat] = useState(state?.cat || '');
 
   const navigate = useNavigate()
@@ -18,13 +20,13 @@ function Write() {
   const upload = async () => {
     try {
       const formData = new FormData();
-      formData.append('file', file)
-      const res = await axios.post('/upload', formData)
+      formData.append("file", file);
+      const res = await axios.post("/upload", formData);
       return res.data
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  }
+  };
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -45,7 +47,7 @@ function Write() {
           img: file ? imgUrl : "",
           date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
         });
-      // navigate("/")
+      navigate("/")
     } catch (err) {
       console.log(err);
     }
